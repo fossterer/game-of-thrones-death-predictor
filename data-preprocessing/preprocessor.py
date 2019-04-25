@@ -28,7 +28,7 @@ training_set_part2 = []
 with open("input/episodes.json") as input_file2:
         episodes_data = json.load(input_file2)
 
-#   Create a disctionary of the form <name, episodeAppearanceCount>
+#   Create a dictionary of the form <name, episodeAppearanceCount>
 #   For each object in the array "episodes", if a "characterName" appears, increase its count in dictionary by 1
         episode_counter = Counter()
         for episode in episodes_data['episodes']:
@@ -53,7 +53,7 @@ with open("input/episodes.json") as input_file2:
 
 # Extract only rows with data in all columns
 # i.e. for each character name, only if values exist in both training set parts, construct a new final training set that we would work on
-count = 0
+
 training_set = []
 
 for character_row in training_set_part1:
@@ -67,21 +67,14 @@ for character_row in training_set_part1:
                         training_row['dead'] = character_row['dead']
 
                         training_set.append(training_row)
-                        count += 1
-                        break
-        # break
-print count
-pprint(training_set)
-# Write 2 training sets into 2 csv files
-with open('output/characters.csv', 'w') as output_file1:
-        writer = csv.DictWriter(output_file1, training_set_part1[0].keys())
-        writer.writeheader()
-        writer.writerows(training_set_part1)
 
-with open('output/episodes.csv', 'w') as output_file2:
-        writer = csv.DictWriter(output_file2, training_set_part2[0].keys())
+                        break
+
+# Write 2 training sets into 2 csv files
+with open('output/training-data.csv', 'w') as output_file:
+        writer = csv.DictWriter(output_file, training_set[0].keys())
         writer.writeheader()
-        writer.writerows(training_set_part2)
+        writer.writerows(training_set)
 
 # Goal: After this exercise, we have training set with characters that "died" by end of Season 8 Episode 2.
 #       Our test data would be constructed in the form <name, episodeAppearanceCount, killCount> to obtain a prediction for "Dead"
