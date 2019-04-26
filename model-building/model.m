@@ -1,5 +1,5 @@
 % Load training data
-data = csvread('../data-preprocessing/output/training-data.txt');
+data = csvread('../data-preprocessing/output/training-data.csv');
 
 % Separate into X and y
 X = data(:, 2:3);
@@ -19,7 +19,7 @@ xlabel('No. of episode appearances');
 ylabel('No. of victims killed');
 legend('Dead', 'Alive');
 hold off;
-print -djpg outputs/scatterplot
+print -djpg output/scatterplot
 
 % Set initalTheta to 0
 initialTheta = zeros(n, 1);
