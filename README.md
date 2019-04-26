@@ -15,7 +15,7 @@ Ubuntu 18.04 LTS(x64) system
 
 # Development
 
-# Build/Run Instructions
+## Build/Run Instructions
 This project comes with a Makefile.
 
  - Just use
@@ -38,9 +38,9 @@ to run just the *Data Pre-processing* step
 to only *build the model* for prediction, provided the training dataset is available (from the preprocessing step)
 
 # Production
-**Note:** This may not be production ready. Please see 'Issues' in the Github UI
+**Note:** This may not be production ready. Please see this issue [#8](https://github.com/fossterer/game-of-thrones-death-predictor/issues/8)
 
-# Build/Run Instructions
+## Build/Run Instructions
 This project comes with a Makefile.
 
  - Just use
