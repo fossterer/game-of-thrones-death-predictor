@@ -12,6 +12,8 @@
 
 that can provide the information I'm aiming to use for this project.
 
+![Scatter plot of data used](../model-building/output/scatterplot.jpg)
+
 # Procedure
 1. From data/characters.json, for each character, obtain count of characters killed by them
 
