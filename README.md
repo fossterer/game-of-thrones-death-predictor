@@ -1,3 +1,12 @@
+# Tested on
+Ubuntu 18.04 LTS(x64) system
+
+# System Requirements
+1. GNU Make tool
+2. Python 2.7+
+3. GNU Octave
+4. fig2dev tool (optional, may show warnings if not installed)
+
 # Building
 This project comes with a Makefile.
 
