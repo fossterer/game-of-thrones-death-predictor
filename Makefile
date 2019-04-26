@@ -3,7 +3,7 @@ MAKEFLAGS += --silent
 run:	preprocess build-model
 
 preprocess:
-	echo "Performing Data Preprocessing step"; \
+	echo "\nPerforming Data Preprocessing step"; \
 	cd data-preprocessing; \
 	python preprocessor.py; \
 	echo "Finished successfully..!"
@@ -11,9 +11,9 @@ preprocess:
 		echo "Output written into data-preprocessing/output/"
 
 build-model:
-	echo "Performing Data Preprocessing step"; \
-	cd data-preprocessing; \
-	python preprocessor.py; \
+	echo "\nPerforming Model building step"; \
+	cd model-building; \
+	octave model.m \
 	echo "Finished successfully..!"
 	cd ..; \
-		echo "Output written into data-preprocessing/output/"
+		echo "Scatter plot of training data is saved into model-building/output/"
